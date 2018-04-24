@@ -3,6 +3,11 @@
 #include "AppFactory.h"
 #include "ModulesApp.h"
 #include "MooseSyntax.h"
+#include "Darcy.h"
+#include "Porous.h"
+#include "HeatConvection.h"
+#include "HeatConductionOutflow.h"
+#include "DVelocity.h"
 
 template <>
 InputParameters
@@ -36,8 +41,16 @@ heatistApp::registerApps()
 }
 
 void
-heatistApp::registerObjects(Factory & /*factory*/)
+heatistApp::registerObjects(Factory & factory)
 {
+ registerKernel(Darcy);
+ registerKernel(HeatConvection);
+
+ registerAuxKernel(DVelocity);
+
+ registerMaterial(Porous);
+
+ registerBoundaryCondition(HeatConductionOutflow);
   /* Uncomment Factory parameter and register your new production objects here! */
 }
 

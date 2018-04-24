@@ -26,10 +26,10 @@ include $(FRAMEWORK_DIR)/moose.mk
 
 ALL_MODULES         := no
 
-CHEMICAL_REACTIONS  := no
+CHEMICAL_REACTIONS  := yes
 CONTACT             := no
 FLUID_PROPERTIES    := no
-HEAT_CONDUCTION     := no
+HEAT_CONDUCTION     := yes
 MISC                := no
 NAVIER_STOKES       := no
 PHASE_FIELD         := no
@@ -40,7 +40,7 @@ STOCHASTIC_TOOLS    := no
 TENSOR_MECHANICS    := no
 WATER_STEAM_EOS     := no
 XFEM                := no
-POROUS_FLOW         := no
+POROUS_FLOW         := yes
 
 include $(MOOSE_DIR)/modules/modules.mk
 ###############################################################################
